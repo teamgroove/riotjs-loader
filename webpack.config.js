@@ -1,7 +1,13 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './app/index',
+
+  entry: [
+  'webpack-dev-server/client?http://localhost:8080/',
+  'webpack/hot/dev-server',
+  __dirname + '/app/index.js'
+  ],
+
   output: {
     path: __dirname + '/app',
     filename: 'bundle.js'
