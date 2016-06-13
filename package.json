@@ -1,15 +1,12 @@
 {
-  "name": "riotjs-loader",
+  "name": "riotjs-webpack-boilerplate",
   "version": "3.0.0",
   "description": "riotjs module loader for webpack",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/esnunes/riotjs-loader.git"
-  },
+  "repository": {},
   "keywords": [
     "webpack",
     "loader",
@@ -23,14 +20,23 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/esnunes/riotjs-loader/issues"
+    "url": "s"
   },
-  "homepage": "https://github.com/esnunes/riotjs-loader",
+  "homepage": "",
   "dependencies": {
     "loader-utils": "^0.2.6",
     "riot-compiler": "^2.3.22"
   },
   "peerDependencies": {
     "webpack": "^1.5.3"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "riot": "^2.4.1",
+    "riotjs-loader": "^3.0.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   }
 }
