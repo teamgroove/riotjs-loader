@@ -1,11 +1,11 @@
 {
   "name": "riotjs-webpack-boilerplate",
-  "version": "3.0.0",
-  "description": "riotjs module loader for webpack",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "riotjs-webpack-boilerplate",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "./node_modules/.bin/webpack-dev-server --inline --hot"
+    "dev" : "./node_modules/.bin/webpack-dev-server"
   },
   "repository": {},
   "keywords": [
@@ -24,7 +24,7 @@
     "url": "s"
   },
   "homepage": "",
-  "dependencies": {
+    "dependencies": {
     "loader-utils": "^0.2.6",
     "riot-compiler": "^2.3.22"
   },

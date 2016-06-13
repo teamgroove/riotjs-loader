@@ -5,7 +5,7 @@ module.exports = {
   entry: [
   'webpack-dev-server/client?http://localhost:8080/',
   'webpack/hot/dev-server',
-  __dirname + '/app/index.js'
+  __dirname + '/app/index'
   ],
 
   output: {
@@ -13,6 +13,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
+   new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
       riot: 'riot'
     })
@@ -26,6 +27,10 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: './app'
+    contentBase: './app',
+     historyApiFallback: true,
+    hot: true,
+    progress: true,
+   // stats: 'errors-only'
   }
 };

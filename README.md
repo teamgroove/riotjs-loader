@@ -1,92 +1,32 @@
-# riotjs module loader for webpack
+# riotjs webpack biolerplate
+* HMR (Hot module reloading) activated
 
 ## install
 ```bash
-npm install --save-dev riot riotjs-loader babel babel-loader webpack webpack-dev-server
-```
-
-## usage
-
-### /webpack.config.js
-```javascript
-var webpack = require('webpack');
-
-module.exports = {
-  entry: './app/index',
-  output: {
-    path: __dirname + '/public',
-    filename: 'bundle.js'
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      riot: 'riot'
-    })
-  ],
-  module: {
-    preLoaders: [
-      { test: /\.tag$/, exclude: /node_modules/, loader: 'riotjs-loader', query: { type: 'none' } }
-    ],
-    loaders: [
-      { test: /\.js$|\.tag$/, exclude: /node_modules/, loader: 'babel-loader' }
-    ]
-  },
-  devServer: {
-    contentBase: './public'
-  }
-};
-```
-
-### /public/index.html
-```html
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>App</title>
-</head>
-<body>
-  <app></app>
-  <script src="bundle.js"></script>
-</body>
-</html>
-```
-
-### /app/index.js
-```javascript
-require('./app.tag');
-
-riot.mount('*');
-```
-
-### /app/app.tag
-```html
-require('./name.tag');
-
-<app>
-  <name first="Hello" last="World"></name>
-  <name first="Ola" last="Mundo"></name>
-</app>
-```
-
-### /app/name.tag
-```html
-<name>
-  <h1>{ opts.last }, { opts.first }</h1>
-</name>
+npm install
 ```
 
 ## development
 
 ```bash
-./node_modules/.bin/webpack-dev-server --inline --hot
+npm run dev
 ```
+or
+
+```bash
+./node_modules/.bin/webpack-dev-server
+```
+
+and
 - open http://localhost:8080/
+
+Try changing a .tag-file and see the HMR-feature at work. Profit!
 
 ## LICENSE
 
 (MIT License)
 
-Copyright (c) 2015 Eduardo Nunes <esnunes@gmail.com>
+Copyright (c) 2016 René Thiel <mail@renethiel.info>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
